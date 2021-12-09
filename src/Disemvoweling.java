@@ -39,7 +39,7 @@ public class Disemvoweling {
         str = removeLetter(str, "o");
         str = removeLetter(str, "u");
         int newLength = str.length();
-        return str + "\nReduced from " + oldLength + " to " + newLength + " characters. Reduction rate of " + ((int) (((double) (oldLength - str.length()) / oldLength) * 100)) + "%";
+        return str;
     }
 
     public static void main(String[] args) {
@@ -49,6 +49,8 @@ public class Disemvoweling {
         System.out.println(" Please enter your phrase: ");
         str = scan.nextLine();
         str = str.toLowerCase();
-        System.out.print("Your disemvoweled phrase is: " + findDouble(disemvowel(str)));
+        String phrase = findDouble(disemvowel(str));
+        System.out.println("Your disemvoweled phrase is: " + findDouble(disemvowel(str)));
+        System.out.println("Reduced from " + str.length() + " to " + phrase.length() + " characters. Reduction rate of " + ((int) (((double) (str.length() - phrase.length()) / str.length()) * 100)) + "%");
     }
 }
